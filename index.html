@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="Description"
+    content="To help estimate the unseen effects the Covid-19 pandemic might have on our lives and lives around us.">
+  <link rel="stylesheet" href="assets/css/c-19Estimator.css" />
+  <script defer src="src/estimator.js"></script>
+  <title>Covid-19 Effect Estimator</title>
+</head>
+
+<body>
+  <!-- Modal Top-->
+
+  <div id="mod" class="modalHide">
+    <fieldset class="content">
+      <legend>Input Data</legend>
+      <div class="formBox">
+        <form id="input required-form">
+          <label for="place">Region:</label><input required type="text" id="place" name="Place" />
+          <label for="age">Average Age:</label><input required type="number" id="age" name="Age" />
+          <label for="income">Average daily Income:</label>
+          <input required type="number" id="income" name="Income" />
+          <label for="earners">Average Daily Earners:</label>
+          <input required type="number" id="earners" placeholder="%" name="dailyIncome" />
+          <fieldset id="radios">
+            <legend>Period Type</legend>
+            <section class="radios" data-period-type>
+              <label for="days">Days
+                <input id="days" class="radio" type="radio" name="periodType" value="days" /></label>
+              <label for="weeks">Weeks
+                <input id="weeks" class="radio" type="radio" name="periodType" value="weeks" /></label>
+              <label for="months">Month
+                <input id="months" class="radio" type="radio" name="periodType" value="month" /></label>
+            </section>
+          </fieldset>
+          <label for="timePeriod">Within how many:</label>
+          <input required id="timePeriod" name="timePeriod" type="number" data-time-to-elapse />
+          <label for="RC">Reported Cases:</label>
+          <input required id="RC" name="reported" type="number" data-reported-cases />
+          <label for="pop">Population:</label>
+          <input required id="pop" name="population" type="number" data-population />
+          <label for="beds">Total hospital beds:</label>
+          <input required id="beds" name="bedsAvailable" type="number" data-total-hospital-beds />
+          <div class="SnC">
+            <button type="submit" class="submit" data-go-estimate>
+              Estimate
+            </button>
+            <button class="closeModal">Close</button>
+          </div>
+        </form>
+      </div>
+    </fieldset>
+  </div>
+  <!-- Modal Bottom-->
+
+  <div class="container">
+    <div class="menu-btn" title="Modal">
+      <button>Input data</button>
+    </div>
+    <div id="dataInput">
+      <h2>
+        Data:
+      </h2>
+      <ul>
+        <li id="region">
+          <ul>
+            <li>Name: <span id="showName"></span></li>
+            <li>Average Age: <span id="showAge"></span></li>
+            <li>Average Daily Income: <span id="showIncome"></span> $</li>
+            <li>
+              Average Daily Income Population:
+              <span id="showDailyEarners"></span>%
+            </li>
+          </ul>
+        </li>
+        <li>Period Type: <span id="showPeriodType"></span></li>
+        <li>Time To Elapse: <span id="showTimeElapsed"></span></li>
+        <li>Reported Cases: <span id="showCases"></span></li>
+        <li>Population: <span id="showPopulation"></span></li>
+        <li>Total Hospital Beds: <span id="showBedsRemaining"></span></li>
+      </ul>
+    </div>
+    <div class="imp">
+      <h2>Impact</h2>
+      <h4>Click image</h4>
+      <div id="card1" class="card">
+        <div id="iBox1" class="img-box">
+          <img src="assets/img/hand-touching-glass-3944752.jpg" alt="impact" />
+        </div>
+        <article>
+          <h2>
+            If the slope is less steep and we curtail the mobility of the
+            virus within the given time Period,we should have:
+          </h2>
+          <ul>
+            <li>Currently Infected: <span id="I_Infected"></span></li>
+            <li>
+              Infections within that time: <span id="I_WithInTime"></span>
+            </li>
+            <li>Severely Infected: <span id="I_SevereInfected"></span></li>
+            <li>
+              Hospital Beds Available: <span id="I_BedsRemaining"></span>
+            </li>
+            <li>To be Move to ICU: <span id="I_ToICU"></span></li>
+            <li>
+              patients in need of Ventilators:
+              <span id="I_Ventilators"></span>
+            </li>
+            <li>economic Impact: <span id="I_MonyLost"></span>$</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <div class="imp">
+      <h2>Severe Impact</h2>
+      <h4>Click here</h4>
+      <div id="card2" class="card">
+        <div id="iBox2" class="img-box">
+          <img src="assets/img/deadlyskul_c9vvm14l.jpg" alt="severe Impact" />
+        </div>
+        <article>
+          <h2>
+            Worst case scenario:
+          </h2>
+          <ul>
+            <li>Currently Infected: <span id="SI_Infected"></span></li>
+            <li>
+              Infections within that time: <span id="SI_WithInTime"></span>
+            </li>
+            <li>Severely Infected: <span id="SI_SevereInfected"></span></li>
+            <li>
+              Hospital Beds Available: <span id="SI_BedsRemaining"></span>
+            </li>
+            <li>To be Move to ICU: <span id="SI_ToICU"></span></li>
+            <li>
+              patients in need of Ventilators:
+              <span id="SI_Ventilators"></span>
+            </li>
+            <li>economic Impact: <span id="SI_MonyLost"></span>$</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
