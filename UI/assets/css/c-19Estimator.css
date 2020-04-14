@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background: url(../img/coronavirus-statistics-on-screen-3970330.jpg) no-repeat center/cover;
+}
+
+/* Modal styling start */
+div.modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 200%;
+  z-index: 3000;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+div.modalHide {
+  display: none;
+  transition: all 1s ease-in;
+}
+
+div.modal .content {
+  position: relative;
+  width: 760px;
+  height: 875px;
+  margin: auto;
+  margin-top: 7px;
+  border: 3px solid rgba(255, 255, 255, 0.04);
+  /* background: #1d1824; */
+  background: #131419;
+  color: white;
+  transition: transform 1s ease-in;
+}
+
+div#mod .content>legend {
+  margin-left: 40%;
+  padding: 3px;
+  font-size: 20px;
+}
+
+div.modalHide .content {
+  transform: translate(500%, -500%);
+  transition: transform 1s ease-in;
+}
+
+div.modal .content .formBox {
+  position: relative;
+  top: 15px;
+  margin-bottom: 15px;
+  width: 570px;
+  height: 810px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  box-sizing: border-box;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+div.modal .content form {
+  padding: 5px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+div.modal .content form label {
+  padding-bottom: 10px;
+  font-weight: 1000;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+div.modal .content form input {
+  outline: none;
+}
+
+div.modal .content form input:required {
+  border-color: red;
+}
+
+div.modal .content form input:not(.radio),
+button.submit,
+button.closeModal {
+  width: 300px;
+  height: 32px;
+  font-size: 20px;
+  padding: 7px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 17px;
+  margin-left: 15px;
+  border: none;
+  background: inherit;
+  border-bottom: 1px solid black;
+  border-radius: 7px;
+  box-sizing: border-box;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+div.modal .content form input[type='number']:not(.radio)::-webkit-inner-spin-button {
+  display: none;
+}
+
+fieldset#radios {
+  border: 3px solid rgba(255, 255, 255, 0.04);
+  margin-top: 15px;
+  margin-bottom: 27px;
+  padding: 7px;
+}
+
+fieldset#radios legend {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+div.modal .content form .radios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 7px;
+}
+
+form input:hover,
+form input:focus {
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+}
+
+div.SnC {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: -4px;
+  transform: translateX(95%);
+  right: 80%;
+}
+
+button.submit,
+button.closeModal {
+  position: relative;
+  margin-right: 20px;
+  padding: 2px;
+  cursor: pointer;
+  width: 170px;
+  height: 32px;
+}
+
+button.submit:hover,
+button.closeModal:hover {
+  border-color: purple;
+  scale: 1.1;
+}
+
+/* Modal styling end */
+
+.container {
+  width: 1300px;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  background: url('../img/silhouette-of-person-holding-glass-mason-jar-1274260.jpg') center/cover;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 8%;
+  left: 3%;
+  width: 50px;
+  height: 50px;
+}
+
+.menu-btn button {
+  position: relative;
+  border: none;
+  font-size: 1.2em;
+  outline: none;
+  background: linear-gradient(to bottom, rgb(64, 124, 148), rgb(29, 86, 119));
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.menu-btn button:hover {
+  scale: 1.05;
+}
+
+li span {
+  padding: 2px;
+  font-size: 19px;
+  font-weight: bolder;
+  letter-spacing: 0.1px;
+}
+
+div#dataInput {
+  position: relative;
+  width: 350px;
+  height: 450px;
+  margin: 20px 0;
+  background: url('../img/fade.png') right center/cover;
+  color: white;
+  box-sizing: border-box;
+}
+
+div#dataInput ul {
+  padding: 10px;
+}
+
+div#dataInput ul li {
+  list-style-type: none;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 35px;
+}
+
+div.imp {
+  display: grid;
+}
+
+div.imp>h2,
+div.imp>h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  background: linear-gradient(to bottom, #ff105f, #ffad06) fixed;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 10px;
+}
+
+div.imp>h4:hover {
+  scale: 1.5;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 500px;
+  margin: 20px 0;
+  background-color: #fff;
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transition: 0.5s ease-in;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: inset 5px 0 50px rgba(0, 0, 0, 0.5);
+  /* transform: perspective(2000px) rotate(-10deg); */
+  z-index: 1000;
+}
+
+.card .img-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  transform-origin: left;
+  transition: 0.5s ease-in;
+  z-index: 100;
+}
+
+.card .img-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .img-box.clicked {
+  /* transform: rotateY(-135deg); */
+  transform: translate(-90%, 90%);
+}
+
+.card article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.card article h2,
+div#dataInput h2 {
+  font-size: 18px;
+  padding: 13px;
+  /* text-align: center; */
+}
+
+.card article ul li {
+  font-size: 18px;
+  padding: 10px;
+  text-transform: capitalize;
+  line-height: 17px;
+  list-style-type: none;
+  font-weight: 400;
+}
